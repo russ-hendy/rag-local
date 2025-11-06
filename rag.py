@@ -39,7 +39,7 @@ results = vectordb.similarity_search(query, k=3)
 
 # 5. Generate an answer using the retrieved context
 context = "\n\n".join([r.page_content for r in results])
-llm = Ollama(model="llama3")
+llm = Ollama(model="llama3") # or whatever model you wanna try!
 response = llm(f"Answer the question using this context:\n\n{context}\n\nQuestion: {query}")
 
 print("\n🧠 Response:")
